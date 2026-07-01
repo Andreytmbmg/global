@@ -1,0 +1,11 @@
+{
+  "scenarioTemplate": {
+    "name": "Обновление OpenTherm и температуры комфорта",
+    "desc": "1. Раз в пол часа обращение к глобальному сценарию, для обновления температуры теплоносителя.\n",
+    "active": true,
+    "onStart": true,
+    "sync": false,
+    "data": "{\"targets\":[{\"type\":\"if\",\"if\":{\"type\":\"condition\",\"mode\":\"OR\",\"conditions\":[{\"type\":\"cron\",\"cron\":\"0 0/30 * ? * * *\",\"mode\":\"NONE\",\"offset\":0}]},\"then\":[{\"type\":\"delay\",\"index\":1,\"time\":11000,\"mode\":\"RESET\",\"targets\":[{\"type\":\"code\",\"code\":\"global.adjust_heating(this);\"}]}],\"else\":[],\"then_delay\":0,\"else_delay\":0,\"mode\":\"EVERY\"}]}",
+    "type": "BLOCK"
+  }
+}
